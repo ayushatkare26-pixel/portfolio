@@ -1,0 +1,105 @@
+import { Component } from '@angular/core';
+import { RevealDirective } from '../../directives/reveal.directive';
+
+@Component({
+  selector: 'app-experience',
+  standalone: true,
+  imports: [RevealDirective],
+  templateUrl: './experience.html',
+  styleUrl: './experience.scss'
+})
+export class ExperienceComponent {
+  experiences = [
+    {
+      role: 'Software Engineer',
+      company: 'Actin Technologies India Pvt. Ltd.',
+      location: 'Pune, Maharashtra · On-site',
+      duration: 'Jan 2026 – Present',
+      period: '5 mos',
+      type: 'Full-Time',
+      current: true,
+      highlights: [
+        'Developing and maintaining enterprise web applications using ASP.NET Core and Angular',
+        'Designing and implementing REST APIs for seamless frontend-backend integration',
+        'Working extensively with Angular Reactive Forms for dynamic and scalable UI',
+        'Involved in frontend designing and user experience improvements',
+        'Gaining hands-on exposure to SCADA lifecycle concepts and industrial system workflows',
+        'Working on cloud-based development environments for coding, deployment, and collaboration',
+        'Using GitHub for version control, repository management, and team collaboration',
+        'Exploring AI-driven approaches using Python to enhance automation and efficiency',
+      ],
+      tech: ['ASP.NET Core', 'Angular', 'TypeScript', 'REST API', 'SCADA', 'GitHub', 'Cloud', 'Python'],
+    },
+    {
+      role: 'Software Engineer Intern',
+      company: 'Actin Technologies India Pvt. Ltd.',
+      location: 'Pune District, Maharashtra · On-site',
+      duration: 'Sep 2025 – Dec 2025',
+      period: '4 mos',
+      type: 'Internship',
+      current: false,
+      highlights: [
+        'Developed and contributed to a Web-based Store Operations Automation System',
+        'Built and worked with REST APIs using ASP.NET Core',
+        'Improved API response handling for smoother frontend integration',
+        'Worked on scalable UI forms using Angular Reactive Forms',
+        'Contributed to real-time data-driven workflows and backend logic',
+        'Gained hands-on experience in application modernization',
+        'Worked in a professional agile-like development environment',
+      ],
+      tech: ['.NET APIs', 'ASP.NET Core', 'Angular', 'SQL Server', 'REST API', 'Agile'],
+    },
+    {
+      role: 'AI Digital Marketing & Content Strategist Intern',
+      company: 'Deltavix Global',
+      location: 'Pune District, Maharashtra · Remote',
+      duration: 'Jul 2025 – Sep 2025',
+      period: '3 mos',
+      type: 'Internship',
+      current: false,
+      highlights: [
+        'Worked at the intersection of AI, content strategy, and digital growth',
+        'Collaborated with CEO/CTO-level stakeholders on strategic discussions',
+        'Executed data-driven content initiatives and SEO-focused strategies',
+        'Leveraged Canva and AI tools to design impactful visual content',
+        'Enhanced technical capabilities in Python with key libraries for automation',
+        'Understood how AI, automation, and content strategy drive scalable business outcomes',
+      ],
+      tech: ['Python', 'AI Tools', 'SEO', 'Canva', 'Content Strategy', 'Digital Marketing'],
+    },
+    {
+      role: 'Java Developer / Full Stack Engineer',
+      company: 'Algorithm Cat',
+      location: 'Pune District, Maharashtra · Hybrid',
+      duration: 'Feb 2025 – Jul 2025',
+      period: '6 mos',
+      type: 'Internship',
+      current: false,
+      highlights: [
+        'Worked on Java-based portal development and Python modules',
+        'Applied algorithms and data structures to optimize functionality',
+        'Developed and deployed core modules for the "Scholarship Stream" portal',
+        'Contributed to both front-end and back-end features for scalable architecture',
+        'Ensured responsive UI and optimized load times through collaborative sprints',
+        'Gained hands-on experience with frontend development, DevOps tools, and SDLC planning',
+      ],
+      tech: ['Java', 'JSP', 'Java Swing', 'Python', 'DevOps', 'SDLC', 'Frontend'],
+    },
+    {
+      role: 'GenAI Intern',
+      company: 'Qualitas Global Services',
+      location: 'Pune District, Maharashtra · On-site',
+      duration: 'Sep 2024 – Oct 2024',
+      period: '2 mos',
+      type: 'Internship',
+      current: false,
+      highlights: [
+        'Gained hands-on experience in Generative AI, AI pipelines, and model training',
+        'Worked extensively with SuperAnnotate for dataset preparation and quality assurance',
+        'Contributed to data annotation QA to improve AI/ML model performance',
+        'Understood end-to-end AI pipeline workflows and model lifecycle concepts',
+      ],
+      tech: ['GenAI', 'SuperAnnotate', 'Data Annotation', 'AI/ML', 'Python'],
+    },
+  ];
+}

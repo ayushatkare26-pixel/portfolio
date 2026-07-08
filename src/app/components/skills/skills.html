@@ -1,0 +1,36 @@
+<section class="section" id="skills">
+  <p class="section-label" appReveal>Skills</p>
+  <h2 class="section-title" appReveal [revealDelay]="80">Technical Expertise</h2>
+  <p class="skills-subtitle" appReveal [revealDelay]="160">Technologies I work with on a daily basis across the full stack.</p>
+
+  <div class="category-tabs" appReveal [revealDelay]="200">
+    @for (cat of categories; track cat.name) {
+      <button class="cat-tab" [class.active]="activeCategory() === cat.name" (click)="setCategory(cat.name)">
+        {{ cat.name }}
+      </button>
+    }
+  </div>
+
+  <div class="skills-grid">
+    @for (skill of activeSkills; track skill.name; let i = $index) {
+      <div class="skill-item" appReveal [revealDelay]="i * 60">
+        <div class="skill-header">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-pct">{{ skill.level }}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" [style.width.%]="skill.level"></div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="all-tech" appReveal [revealDelay]="200">
+    <p class="section-label" style="margin-top:3rem;">All Technologies</p>
+    <div class="tech-cloud">
+      @for (tech of allTech; track tech) {
+        <span class="tech-pill">{{ tech }}</span>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<section class="section" id="education">
+  <p class="section-label" appReveal>Education</p>
+  <h2 class="section-title" appReveal [revealDelay]="80">Academic Background</h2>
+
+  <div class="edu-list">
+    @for (deg of degrees; track deg.degree; let i = $index) {
+      <div class="edu-card" appReveal [revealDelay]="i * 100">
+        <div class="edu-icon-wrap" [style.background]="deg.color + '15'" [style.border-color]="deg.color + '30'">
+          <span class="edu-icon">{{ deg.icon }}</span>
+        </div>
+        <div class="edu-content">
+          <h3 class="edu-degree">{{ deg.degree }}</h3>
+          <p class="edu-institution">{{ deg.institution }}</p>
+        </div>
+        <span class="edu-years">{{ deg.years }}</span>
+      </div>
+    }
+  </div>
+</section>

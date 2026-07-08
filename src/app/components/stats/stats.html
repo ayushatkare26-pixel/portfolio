@@ -1,0 +1,21 @@
+<section class="stats-section" id="stats">
+  <div class="section">
+    <div appReveal class="stats-header">
+      <p class="section-label">By The Numbers</p>
+      <h2 class="section-title">Impact in code.</h2>
+    </div>
+
+    <div class="stats-grid">
+      @for (s of stats; track s.label; let i = $index) {
+        <div class="stat-card" appReveal [revealDelay]="i * 80" revealDirection="up">
+          <div class="stat-icon">{{ s.icon }}</div>
+          <div class="stat-number">
+            <app-counter [target]="s.target" [suffix]="s.suffix" />
+          </div>
+          <div class="stat-label">{{ s.label }}</div>
+          <div class="stat-desc">{{ s.desc }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

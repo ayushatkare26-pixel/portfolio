@@ -1,0 +1,63 @@
+<section class="section" id="experience">
+  <p class="section-label" appReveal>Experience</p>
+  <h2 class="section-title" appReveal [revealDelay]="80">Work History</h2>
+  <p class="exp-subtitle" appReveal [revealDelay]="140">
+    5 roles across full-stack development, AI, Java, and digital strategy.
+  </p>
+
+  <div class="timeline">
+    @for (exp of experiences; track exp.role + exp.company; let i = $index; let last = $last) {
+      <div class="timeline-item" appReveal [revealDelay]="i * 100">
+        <div class="timeline-dot" [class.current]="exp.current"></div>
+        @if (!last) { <div class="timeline-line"></div> }
+
+        <div class="exp-card" [class.current]="exp.current">
+          @if (exp.current) {
+            <div class="current-badge">
+              <span class="current-dot"></span> Current Role
+            </div>
+          }
+
+          <div class="exp-header">
+            <div class="exp-title-block">
+              <h3 class="exp-role">{{ exp.role }}</h3>
+              <p class="exp-company">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/>
+                  <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                </svg>
+                {{ exp.company }}
+              </p>
+              <p class="exp-location">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                {{ exp.location }}
+              </p>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-type-badge" [class.internship]="exp.type === 'Internship'">
+                {{ exp.type }}
+              </span>
+              <span class="exp-duration">{{ exp.duration }}</span>
+              <span class="exp-period">{{ exp.period }}</span>
+            </div>
+          </div>
+
+          <ul class="exp-highlights">
+            @for (h of exp.highlights; track h) {
+              <li>{{ h }}</li>
+            }
+          </ul>
+
+          <div class="exp-tech">
+            @for (t of exp.tech; track t) {
+              <span class="tag">{{ t }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

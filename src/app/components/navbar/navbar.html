@@ -1,0 +1,22 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="nav-inner">
+    <a class="logo" (click)="scrollTo('#hero')">
+      <span class="logo-bracket">&lt;</span>Ayush<span class="logo-dot">.</span>dev<span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a (click)="scrollTo(link.href)">{{ link.label }}</a>
+        </li>
+      }
+      <li>
+        <a class="btn-hire" href="mailto:ayushatkare1@gmail.com">Hire Me</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
